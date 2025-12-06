@@ -75,7 +75,7 @@ python --version
 Import Repositorinya:
 
 ```bash
-git clone https://github.com/addienf/Assignment.git
+git clone https://github.com/addienf/FInal-Presentation-Forecasting.git
 cd main
 ```
 

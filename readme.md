@@ -1,6 +1,6 @@
 # 🛍️ E-Commerce Sales Dashboard & Forecasting
 
-Dashboard interaktif berbasis **Streamlit** untuk menganalisis data penjualan e-commerce dan melakukan prediksi penjualan menggunakan model time series seperti **ARIMA**. Dashboard ini mencakup visualisasi EDA, KPI bisnis, serta forecasting untuk membantu pengambilan keputusan berdasarkan data.
+Dashboard interaktif berbasis **Streamlit** untuk menganalisis data penjualan e-commerce dan melakukan prediksi penjualan menggunakan model time series seperti **ARIMA** dan **Prophet**. Dashboard ini mencakup visualisasi EDA, KPI bisnis, serta forecasting untuk membantu pengambilan keputusan berdasarkan data.
 
 ---
 
@@ -12,12 +12,13 @@ Proyek ini dirancang untuk membantu:
 - Melihat tren penjualan bulanan.
 - Mengidentifikasi kategori produk dan metode pembayaran terbaik.
 - Menganalisis perilaku pelanggan berdasarkan data transaksi.
-- Melakukan _forecasting_ penjualan untuk beberapa periode ke depan.
+- Melakukan _forecasting_ penjualan untuk beberapa periode ke depan, termasuk dari data manual yang dimasukkan pengguna.
 
-Dashboard ini terdiri dari **dua halaman utama**:
+Dashboard ini terdiri dari **tiga halaman utama**:
 
 1. **Overview Dashboard** → Analisis dan visualisasi EDA (Exploratory Data Analysis).
-2. **Forecasting Models** → Prediksi penjualan menggunakan model ARIMA.
+2. **Forecasting Models** → Prediksi penjualan menggunakan model ARIMA dan Prophet dari data historical.
+3. **Manual Input Forecast** → Pengguna dapat memasukkan data penjualan harian secara manual, kemudian dilakukan forecast menggunakan ARIMA dan Prophet hanya dari data input tersebut.
 
 ---
 
@@ -48,7 +49,7 @@ Menampilkan ringkasan performa bisnis dengan visualisasi interaktif, meliputi:
 
 ---
 
-### 🔹 2. Forecasting Models (ARIMA)
+### 🔹 2. Forecasting Models (ARIMA / Prophet)
 
 Melakukan prediksi penjualan berdasarkan historical sales:
 
@@ -56,11 +57,33 @@ Melakukan prediksi penjualan berdasarkan historical sales:
 
 - Grafik prediksi penjualan (Actual vs Forecast)
 - Confidence interval
-- Prediksi 3–12 bulan ke depan
+- Prediksi beberapa periode ke depan (misal 30 hari)
 - Evaluasi model:
   - RMSE
   - MAPE
   - MAE
+
+---
+
+### 🔹 3. Manual Input Forecast
+
+Pengguna dapat memasukkan data penjualan harian secara manual:
+
+#### **Fitur Manual Input**
+
+- Input tanggal dan jumlah penjualan horizontal (kiri-kanan)
+- Tanggal otomatis bertambah +1 hari jika ingin menambahkan beberapa baris
+- Reset data manual kapan saja tanpa reload halaman
+- Forecast penjualan menggunakan ARIMA dan Prophet dari **data input manual saja**
+- Evaluasi model otomatis menampilkan MAE
+- Tampilkan grafik Actual vs Forecast
+
+#### **Kegunaan**
+
+Fitur ini berguna untuk:
+
+- Simulasi skenario penjualan tertentu.
+- Mengecek prediksi dari data yang baru dimasukkan sebelum menjadi historical record.
 
 ---
 
